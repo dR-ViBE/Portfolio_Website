@@ -71,10 +71,19 @@ function SkillCard({ skill, index }) {
                         {skill.name.substring(0, 2).toUpperCase()}
                     </span>
                 ) : (
-                    <img
-                        src={getRedIcon(skill.icon)}
-                        alt={skill.name}
-                        className="w-12 h-12 object-contain"
+                    // Use CSS Mask to allow ANY icon (png, svg, url) to be purely red
+                    <div
+                        className="w-12 h-12 bg-[#E50914]"
+                        style={{
+                            maskImage: `url(${skill.icon})`,
+                            WebkitMaskImage: `url(${skill.icon})`,
+                            maskSize: 'contain',
+                            WebkitMaskSize: 'contain',
+                            maskRepeat: 'no-repeat',
+                            WebkitMaskRepeat: 'no-repeat',
+                            maskPosition: 'center',
+                            WebkitMaskPosition: 'center'
+                        }}
                     />
                 )}
             </div>

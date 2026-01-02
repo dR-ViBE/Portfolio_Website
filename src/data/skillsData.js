@@ -2,8 +2,8 @@ export const skillsData = [
     {
         title: "Languages",
         skills: [
-            { name: "Gosu", icon: "", color: "#e50914", isText: true, description: "General Purpose Language" },
-            { name: "Java", icon: "https://cdn.simpleicons.org/openjdk", color: "#E76F00", description: "Object-Oriented Language" },
+            { name: "Gosu", icon: "/icons/gosu.svg", color: "#e50914", isText: false, description: "General Purpose Language" },
+            { name: "Java", icon: "/icons/java.svg", color: "#E76F00", description: "Object-Oriented Language" },
             { name: "Python", icon: "https://cdn.simpleicons.org/python", color: "#3776AB", description: "Data Science & Scripting" },
             { name: "C/C++", icon: "https://cdn.simpleicons.org/cplusplus", color: "#00599C", description: "System Programming" },
             { name: "SQL", icon: "https://cdn.simpleicons.org/mysql", color: "#4479A1", description: "Database Querying" },
@@ -38,10 +38,10 @@ export const skillsData = [
     {
         title: "Cloud and DevOps",
         skills: [
-            { name: "AWS", icon: "https://cdn.simpleicons.org/amazonwebservices", color: "#FF9900", description: "Cloud Platform" },
+            { name: "AWS", icon: "/icons/aws.svg", color: "#FF9900", description: "Cloud Platform" },
             { name: "Docker", icon: "https://cdn.simpleicons.org/docker", color: "#2496ED", description: "Containerization" },
             { name: "Kubernetes", icon: "https://cdn.simpleicons.org/kubernetes", color: "#326CE5", description: "Container Orchestration" },
-            { name: "Azure", icon: "https://cdn.simpleicons.org/microsoftazure", color: "#0078D4", description: "Cloud Computing" },
+            { name: "Azure", icon: "/icons/azure.svg", color: "#0078D4", description: "Cloud Computing" },
         ]
     },
     {
@@ -60,7 +60,7 @@ export const skillsData = [
     {
         title: "Tools/Technologies",
         skills: [
-            { name: "Guidewire Studio", icon: "", color: "#FF0000", isText: true, description: "Insurance Suite" },
+            { name: "Guidewire Studio", icon: "/icons/guidewire.svg", color: "#FF0000", isText: false, description: "Insurance Suite" },
             { name: "COLMAP", icon: "", color: "#4B0082", isText: true, description: "3D Reconstruction" },
             { name: "Git", icon: "https://cdn.simpleicons.org/git", color: "#F05032", description: "Version Control" },
             { name: "REST API", icon: "", color: "#00FF00", isText: true, description: "Web Services" },
