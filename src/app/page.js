@@ -15,6 +15,9 @@ function HomeContent() {
     const profileParam = searchParams.get('profile');
     if (profileParam) {
       setCurrentProfile(profileParam);
+    } else {
+      // If no profile param (e.g. clicking Logo to go to '/'), reset to null to show Profile Gate
+      setCurrentProfile(null);
     }
   }, [searchParams]);
 

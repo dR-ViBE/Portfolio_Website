@@ -5,7 +5,7 @@ import Hero from './Hero';
 import Row from './Row';
 import SectionGrid from './SectionGrid';
 import projectData from '../../data/projectData';
-import { Briefcase, Code, Award, FileText, Music, Book, Mail, Star, FolderGit2 } from 'lucide-react';
+import { Briefcase, Code, Award, FileText, Music, Book, Mail, Star, FolderGit2, MessageCircle } from 'lucide-react';
 
 export default function Dashboard({ profile }) {
 
@@ -15,11 +15,9 @@ export default function Dashboard({ profile }) {
     // Static Data for "Top Picks" (8 Items for Grid)
     const topPicks = [
         { title: 'Work Authorization', imageUrl: '/workpermit.jfif', icon: Briefcase, link: '/work-auth' },
-        { title: 'Skills', imageUrl: 'https://placehold.co/400x225/22/fff?text=Skills', icon: Code },
+        { title: 'Skills', imageUrl: 'https://placehold.co/400x225/22/fff?text=Skills', icon: Code, link: '/tech-stack' },
         { title: 'Experience', imageUrl: '/workimg.jfif', icon: Briefcase, link: '/experience' },
-        { title: 'Certifications', imageUrl: 'https://placehold.co/400x225/44/fff?text=Certifications', icon: Award },
-        { title: 'Fellowships & Awards', imageUrl: 'https://placehold.co/400x225/55/fff?text=Awards', icon: Award },
-        { title: 'Recommendations', imageUrl: 'https://placehold.co/400x225/66/fff?text=Recommendations', icon: Star },
+        { title: 'Certifications', imageUrl: '/certificate.jfif', icon: Award, link: '/certifications' },
         { title: 'Projects', imageUrl: '/projects.jfif', icon: FolderGit2, link: '/projects' },
         { title: 'Contact Me', imageUrl: '/contact.jfif', icon: Mail, link: '/contact' },
     ];

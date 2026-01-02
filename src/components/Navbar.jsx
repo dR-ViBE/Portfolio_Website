@@ -21,13 +21,35 @@ export default function Navbar({ profile }) {
     }, []);
 
     const navLinks = [
-        'Home',
-        'Professional',
-        'Skills',
-        'Projects',
-        'Awards',
-        'Hire Me',
-        'Ask Me',
+        { name: 'Home', href: `/?profile=${profile || 'Recruiter'}` },
+        { name: 'Professional', href: '/experience' },
+        { name: 'Skills', href: '/skills' },
+        { name: 'Projects', href: '/projects' },
+        { name: 'Hire Me', href: '/contact' },
+        { name: 'Ask Me', href: '/ask-me' },
+    ];
+
+    const allProfiles = [
+        { name: 'Recruiter', img: '/blue1.png' },
+        { name: 'Developer', img: '/grey1.png' },
+        { name: 'Stalker', img: '/red1.png' },
+        { name: 'Adventurer', img: '/yellow1.png' },
+    ];
+
+    const currentProfileName = profile || 'Recruiter';
+    const currentProfileImg = allProfiles.find(p => p.name === currentProfileName)?.img || '/blue1.png';
+
+    // Filter out current profile for the dropdown
+    const availableProfiles = allProfiles.filter(p => p.name !== currentProfileName);
+
+    // Letter offsets for subtle arch effect (Middle letters N, E raised slightly)
+    const logoLetters = [
+        { char: 'G', offset: '0px' },
+        { char: 'A', offset: '-1px' },
+        { char: 'N', offset: '-2px' },
+        { char: 'E', offset: '-2px' },
+        { char: 'S', offset: '-1px' },
+        { char: 'H', offset: '0px' },
     ];
 
     return (
@@ -37,14 +59,27 @@ export default function Navbar({ profile }) {
         >
             <div className="px-4 md:px-12 py-4 flex items-center justify-between">
                 <div className="flex items-center gap-12">
-                    <Link href="/" className="text-[#e50914] text-3xl font-extrabold tracking-tighter cursor-pointer">
-                        PORTFOLIO
+                    {/* Arched Logo linked to Profile Gate */}
+                    <Link href="/" className="flex items-end gap-[1px] cursor-pointer group">
+                        {logoLetters.map((letter, index) => (
+                            <span
+                                key={index}
+                                className="text-[#e50914] text-3xl md:text-4xl font-bold uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110"
+                                style={{
+                                    transform: `translateY(${letter.offset})`,
+                                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+                                }}
+                            >
+                                {letter.char}
+                            </span>
+                        ))}
                     </Link>
+
                     <ul className="hidden lg:flex gap-6 text-sm font-medium text-[#e5e5e5]">
                         {navLinks.map((link) => (
-                            <li key={link}>
-                                <Link href="#" className="hover:text-[#b3b3b3] transition-colors cursor-pointer">
-                                    {link}
+                            <li key={link.name}>
+                                <Link href={link.href} className="hover:text-[#b3b3b3] transition-colors cursor-pointer">
+                                    {link.name}
                                 </Link>
                             </li>
                         ))}
@@ -52,11 +87,44 @@ export default function Navbar({ profile }) {
                 </div>
 
                 <div className="flex items-center gap-6 text-white">
-                    <Search className="w-6 h-6 cursor-pointer" />
-                    <Bell className="w-6 h-6 cursor-pointer" />
-                    <div className="flex items-center gap-2 cursor-pointer group">
-                        {/* Avatar matching requested profile visual style */}
-                        <div className={`w-8 h-8 rounded-sm bg-blue-500 group-hover:ring-2 group-hover:ring-white transition-all`}></div>
+                    {/* Search and Bell removed as requested */}
+
+                    {/* Profile Dropdown */}
+                    <div className="relative group flex items-center gap-2 cursor-pointer">
+                        <div className="w-8 h-8 rounded-md overflow-hidden border border-transparent group-hover:border-white transition-all duration-300">
+                            <img
+                                src={currentProfileImg}
+                                alt={currentProfileName}
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                        {/* Caret Icon */}
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                            <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                        </svg>
+
+                        {/* Dropdown Menu */}
+                        <div className="absolute top-full right-0 mt-4 w-48 bg-black/95 border border-[#333] shadow-lg rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 flex flex-col py-2">
+                            {/* Little triangle pointer */}
+                            <div className="absolute -top-2 right-4 w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-8 border-b-white/10"></div>
+
+                            {availableProfiles.map((p) => (
+                                <div
+                                    key={p.name}
+                                    onClick={() => window.location.href = `/?profile=${p.name}`}
+                                    className="flex items-center gap-3 px-4 py-3 hover:underline cursor-pointer transition-colors"
+                                >
+                                    <img src={p.img} alt={p.name} className="w-8 h-8 rounded-sm" />
+                                    <span className="text-sm text-[#b3b3b3] hover:text-white capitalize">{p.name}</span>
+                                </div>
+                            ))}
+
+                            <div className="border-t border-[#333] mt-2 pt-2">
+                                <Link href="/" className="block px-4 py-2 text-sm text-center hover:underline text-white">
+                                    Sign out
+                                </Link>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
