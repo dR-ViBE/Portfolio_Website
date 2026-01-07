@@ -22,52 +22,84 @@ export default function ExperiencePage() {
         {
             id: 1,
             type: 'work',
-            ...genericWorkContent,
+            role: 'Research Assistant',
+            company: 'State University of New York - Buffalo',
+            location: 'Buffalo, NY',
+            skills: 'Python | CUDA | PyTorch | COLMAP | Conda | Git | Ubuntu',
+            description: [
+                'Optimized a high-fidelity 3D reconstruction pipeline by fusing NeRF research code with multi-view stereo; ported and debugged research prototypes for CUDA-enabled workstations to improve training stability and runtime performance.',
+                'Implemented production-grade utilities to extract depth/disparity, generate point clouds, normal maps and triangle meshes from real capture datasets; authored end-to-end pipeline documentation and presentation-ready evaluation reports for stakeholders'
+            ],
             color: 'blue',
             date: 'May 2025 - Present'
         },
         {
             id: 2,
             type: 'work',
-            ...genericWorkContent,
+            role: 'Graduate Assistant',
+            company: 'State University of New York - Buffalo',
+            location: 'Buffalo, NY',
+            skills: 'Python | Apache Spark | Hadoop | MapReduce | Kafka | Pandas | Scikit-Learn',
+            description: [
+                'Facilitated academic success for 200+ students in Data Intensive Computing (CSE 587) by collaborating with faculty to simplify complex concepts regarding distributed systems and large-scale data processing.',
+                'Managed comprehensive assessment cycles for assignments and projects, providing targeted technical feedback that significantly enhanced student mastery of big data architectures and engineering frameworks.'
+            ],
             color: 'white',
             date: 'Sep 2024 - Dec 2024'
         },
         {
             id: 3,
             type: 'work',
-            ...genericWorkContent,
+            role: 'Associate Software Engineer',
+            company: 'Hexaware Technologies',
+            location: 'Chennai, India',
+            skills: 'Java | GOSU | Guidewire PolicyCenter | REST API | Jenkins | JIRA | Agile',
+            description: [
+                'Integrated third-party VIN services and customized Refresh/Retrieve flows to auto-populate vehicle and policy data from external rating engines, reducing manual entry errors and effort by 30%.',
+                'Configured SmartCOMM integration with Guidewire PolicyCenter: coded document triggers and data-field mappings to automate generation of policy schedules and endorsement letters, reducing manual document prep time by 25%.',
+                'Developed 10+ PCF views/pages for endorsements and mid-term adjustments to improve user navigation and cut support tickets by 18% while ensuring regulatory compliance.',
+                'Built and maintained Jenkins jobs for PolicyCenter deployments to Dev and QA; monitored CI pipelines and alerted teams on failures, contributing to a 20% reduction in deployment downtime.',
+                'Formulated test plans and reports suitable for automation, increasing QA throughput by 45%; led cross-team JIRA triage in an agile setup to identify 50+ critical/high issues and prevent post-deployment incidents'
+            ],
             color: 'white',
             date: 'Mar 2023 - Nov 2023'
         },
         {
             id: 4,
             type: 'work',
-            ...genericWorkContent,
+            role: 'Full Stack Developer Intern',
+            company: 'Hexaware Technologies',
+            location: 'Chennai, India',
+            skills: 'Java | Gosu | React | MySQL | Azure | Guidewire',
+            description: [
+                'Guidewire Skill upgrade: Gained hands on experience and acquired 15+ certifications in Guidewire Technology, Gosu, Java and Azure.',
+                'Developed an end to end web based Patient Management System to streamline patient data tracking and management using Java, MySQL and React.',
+                'Enabled CRUD operations for patient records, appointment scheduling and role-based access control, integrated dynamic dashboards for tracking patient flow.'
+            ],
             color: 'white',
             date: 'Oct 2022 - Feb 2023'
         },
         {
             id: 5,
             type: 'education',
-            role: 'Bachelor of Science in Computer Science',
-            company: 'University of Tech',
-            location: 'Boston, MA',
+            role: "Master's of Science in Computer Science",
+            company: 'SUNY',
+            location: 'Buffalo, NY',
             skills: 'AI/ML Specialization',
-            description: ['GPA: 3.9/4.0', 'Dean\'s List', 'Relevant Coursework: Algorithms, OS, Distributed Systems'],
+            description: ['GPA: 3.6/4.0', 'Relevant Coursework: ML, Algorithms, OS, DIC'],
             color: 'pink',
-            date: 'Sep 2021 - May 2025' // Placeholder date
+            date: 'Sep 2021 - May 2025'
         },
         {
             id: 6,
             type: 'education',
-            role: 'High School Diploma',
-            company: 'City High School',
-            location: 'City, State',
-            skills: '',
-            description: ['Valedictorian', 'Robotics Club President'],
+            role: 'Bachelor of Science in Computer Science',
+            company: 'Anna University',
+            location: 'Chennai, India',
+            skills: 'CS Specialization',
+            description: ['GPA: 8.1/10.0', 'Relevant Coursework: Data Structures, Cloud Computing, Distributed Systems'],
             color: 'pink',
-            date: 'Sep 2017 - May 2021' // Placeholder date
+            date: 'Sep 2017 - May 2021'
         }
     ];
 

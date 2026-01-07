@@ -46,7 +46,7 @@ export default function SectionGrid({ title, items }) {
                                     <div className="px-3 py-2 flex items-center gap-2 bg-[#121212] border-t border-gray-800">
                                         {/* Tiny Icon */}
                                         {item.icon && <item.icon className="w-4 h-4 text-[#3db5e6]" />}
-                                        <span className="text-xs md:text-sm font-bold text-white tracking-wide">
+                                        <span className="text-sm md:text-xl font-bold text-white tracking-wide">
                                             {item.title}
                                         </span>
                                     </div>
@@ -86,7 +86,7 @@ export default function SectionGrid({ title, items }) {
                                 <div className="px-3 py-2 flex items-center gap-2 bg-[#121212] border-t border-gray-800">
                                     {/* Tiny Icon */}
                                     {item.icon && <item.icon className="w-4 h-4 text-[#3db5e6]" />}
-                                    <span className="text-xs md:text-sm font-bold text-white tracking-wide">
+                                    <span className="text-sm md:text-xl font-bold text-white tracking-wide">
                                         {item.title}
                                     </span>
                                 </div>

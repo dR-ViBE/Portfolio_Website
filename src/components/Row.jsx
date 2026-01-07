@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Row({ title, items }) {
     const rowRef = useRef(null);
@@ -39,13 +40,8 @@ export default function Row({ title, items }) {
                     ref={rowRef}
                     className="flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2 py-4" // Added py-4 to allow scaling space vertically
                 >
-                    {items.map((item) => (
-                        <div
-                            key={item.id || item.title}
-                            className="relative h-28 min-w-[180px] cursor-pointer transition duration-300 ease-out md:h-36 md:min-w-[260px] hover:scale-110 hover:z-50 rounded-sm"
-                        // hover:z-50 ensures the scaled card is above others
-                        >
-                            {/* Card Content */}
+                    {items.map((item) => {
+                        const CardContent = (
                             <div className="relative h-full w-full rounded-sm overflow-hidden bg-[#2f2f2f] flex items-center justify-center group/card">
                                 {/* Item Image */}
                                 {item.imageUrl && !item.imageUrl.includes('placehold.co') ? (
@@ -73,12 +69,32 @@ export default function Row({ title, items }) {
                                         </div>
                                     </>
                                 ) : null}
-
-                                {/* Hover Project Overlay (Optional: Netflix shows info on hover) */}
-                                {/* For now just the scale is fine, but we could add a gradient overlay on hover */}
                             </div>
-                        </div>
-                    ))}
+                        );
+
+                        const containerClasses = "relative h-28 min-w-[180px] cursor-pointer transition duration-300 ease-out md:h-36 md:min-w-[260px] hover:scale-110 hover:z-50 rounded-sm block";
+
+                        if (item.link) {
+                            return (
+                                <Link
+                                    key={item.id || item.title}
+                                    href={item.link}
+                                    className={containerClasses}
+                                >
+                                    {CardContent}
+                                </Link>
+                            );
+                        }
+
+                        return (
+                            <div
+                                key={item.id || item.title}
+                                className={containerClasses}
+                            >
+                                {CardContent}
+                            </div>
+                        );
+                    })}
                 </div>
 
                 <ChevronRight
