@@ -4,6 +4,8 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import { skillsData } from '@/data/skillsData';
 import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
+import Link from 'next/link';
 
 export default function SkillsPage() {
     return (
@@ -11,6 +13,13 @@ export default function SkillsPage() {
             <Navbar />
 
             <div className="pt-32 px-4 md:px-12 max-w-7xl mx-auto">
+                {/* Back Button */}
+                <div className="absolute top-24 left-4 md:top-32 md:left-12 z-50">
+                    <Link href="/?profile=Recruiter" className="p-2 bg-[#1a1a1a] rounded-full hover:bg-[#333] transition-colors block">
+                        <ArrowLeft className="w-6 h-6 text-white" />
+                    </Link>
+                </div>
+
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

@@ -15,20 +15,20 @@ export default function Dashboard({ profile }) {
     // Static Data for "Top Picks" (8 Items for Grid)
     // Static Data for "Top Picks" (8 Items for Grid)
     const topPicks = [
-        { title: 'Work Authorization', imageUrl: '/permit GIF.gif', icon: Briefcase, link: '/work-auth' },
-        { title: 'Skills', imageUrl: '/Skills.gif', icon: Code, link: '/tech-stack' },
-        { title: 'Experience', imageUrl: '/work experience.gif', icon: Briefcase, link: '/experience' },
-        { title: 'Certifications', imageUrl: '/Certificates.gif', icon: Award, link: '/certifications' },
-        { title: 'Projects', imageUrl: '/Projects.gif', icon: FolderGit2, link: '/projects' },
-        { title: 'Contact Me', imageUrl: '/Contact.gif', icon: Mail, link: '/contact' },
+        { title: 'Work Authorization', imageUrl: '/permit GIF.gif', staticImage: '/permit_static.png', icon: Briefcase, link: '/work-auth' },
+        { title: 'Skills', imageUrl: '/Skills.gif', staticImage: '/skills_static.png', icon: Code, link: '/tech-stack' },
+        { title: 'Experience', imageUrl: '/work experience.gif', staticImage: '/experience_static.png', icon: Briefcase, link: '/experience' },
+        { title: 'Certifications', imageUrl: '/Certificates.gif', staticImage: '/certificates_static.png', icon: Award, link: '/certifications' },
+        { title: 'Projects', imageUrl: '/Projects.gif', staticImage: '/projects_static.png', icon: FolderGit2, link: '/projects' },
+        { title: 'Contact Me', imageUrl: '/Contact.gif', staticImage: '/contact_static.png', icon: Mail, link: '/contact' },
     ];
 
     // Static Data for "Continue Watching"
     // Static Data for "Continue Watching"
     const continueWatching = [
-        { title: 'Music', imageUrl: 'https://placehold.co/400x225/99/fff?text=Music', icon: Music, link: '/music' },
-        { title: 'Reading', imageUrl: 'https://placehold.co/400x225/aa/fff?text=Reading', icon: Book },
-        { title: 'Blogs', imageUrl: 'https://placehold.co/400x225/bb/fff?text=Blogs', icon: FileText, link: '/blogs' },
+        { title: 'Music', imageUrl: '/Continue_Watching/Music.png', icon: Music, link: '/music' },
+        { title: 'Reading', imageUrl: '/Continue_Watching/Reading.jpg', icon: Book, link: '/reading' },
+        { title: 'Blogs', imageUrl: '/Continue_Watching/Blog.jpg', icon: FileText, link: '/blogs' },
         // Awards removed as requested
         { title: 'Contact Me', imageUrl: '/contact.jfif', icon: Mail, link: '/contact' },
     ];

@@ -3,12 +3,20 @@
 import Navbar from '@/components/Navbar';
 import Link from 'next/link';
 
+import { ArrowLeft } from 'lucide-react';
+
 export default function BlogsPage() {
     return (
         <div className="bg-black min-h-screen text-white font-sans selection:bg-blue-900 selection:text-white">
             <Navbar />
 
-            <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center space-y-12">
+            <div className="flex flex-col items-center justify-center min-h-[80vh] px-4 text-center space-y-12 relative animate-fade-in">
+                {/* Back Button */}
+                <div className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
+                    <Link href="/?profile=Recruiter" className="p-2 bg-[#1a1a1a] rounded-full hover:bg-[#333] transition-colors block">
+                        <ArrowLeft className="w-6 h-6 text-white" />
+                    </Link>
+                </div>
 
                 {/* Header Section */}
                 <div className="space-y-4">

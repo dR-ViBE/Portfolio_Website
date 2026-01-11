@@ -22,11 +22,26 @@ export default function SectionGrid({ title, items }) {
                                     <div className="relative aspect-video w-full">
                                         {/* Image */}
                                         {item.imageUrl && !item.imageUrl.includes('placehold.co') ? (
-                                            <img
-                                                src={item.imageUrl}
-                                                alt={item.title}
-                                                className="object-cover w-full h-full"
-                                            />
+                                            item.staticImage ? (
+                                                <>
+                                                    <img
+                                                        src={item.staticImage}
+                                                        alt={item.title}
+                                                        className="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                                                    />
+                                                    <img
+                                                        src={item.imageUrl}
+                                                        alt={item.title}
+                                                        className="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                                                    />
+                                                </>
+                                            ) : (
+                                                <img
+                                                    src={item.imageUrl}
+                                                    alt={item.title}
+                                                    className="object-cover w-full h-full"
+                                                />
+                                            )
                                         ) : (
                                             <div className="w-full h-full bg-[#2f2f2f] flex items-center justify-center">
                                                 {/* Fallback pattern or solid color */}
@@ -62,11 +77,26 @@ export default function SectionGrid({ title, items }) {
                                 <div className="relative aspect-video w-full">
                                     {/* Image */}
                                     {item.imageUrl && !item.imageUrl.includes('placehold.co') ? (
-                                        <img
-                                            src={item.imageUrl}
-                                            alt={item.title}
-                                            className="object-cover w-full h-full"
-                                        />
+                                        item.staticImage ? (
+                                            <>
+                                                <img
+                                                    src={item.staticImage}
+                                                    alt={item.title}
+                                                    className="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                                                />
+                                                <img
+                                                    src={item.imageUrl}
+                                                    alt={item.title}
+                                                    className="absolute inset-0 object-cover w-full h-full transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                                                />
+                                            </>
+                                        ) : (
+                                            <img
+                                                src={item.imageUrl}
+                                                alt={item.title}
+                                                className="object-cover w-full h-full"
+                                            />
+                                        )
                                     ) : (
                                         <div className="w-full h-full bg-[#2f2f2f] flex items-center justify-center">
                                             {/* Fallback pattern or solid color */}

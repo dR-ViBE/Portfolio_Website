@@ -45,10 +45,10 @@ export default function Navbar({ profile }) {
     // Letter offsets for subtle arch effect (Middle letters N, E raised slightly)
     const logoLetters = [
         { char: 'G', offset: '0px' },
-        { char: 'A', offset: '-1px' },
-        { char: 'N', offset: '-2px' },
-        { char: 'E', offset: '-2px' },
-        { char: 'S', offset: '-1px' },
+        { char: 'A', offset: '0px' },
+        { char: 'N', offset: '0px' },
+        { char: 'E', offset: '0px' },
+        { char: 'S', offset: '0px' },
         { char: 'H', offset: '0px' },
     ];
 
@@ -57,7 +57,7 @@ export default function Navbar({ profile }) {
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#141414]' : 'bg-gradient-to-b from-black/70 to-transparent'
                 }`}
         >
-            <div className="px-4 md:px-12 py-4 flex items-center justify-between">
+            <div className="px-4 md:px-12 py-6 flex items-center justify-between">
                 <div className="flex items-center gap-12">
                     {/* Arched Logo linked to Profile Gate */}
                     <Link href="/" className="flex items-end gap-[1px] cursor-pointer group">
@@ -75,7 +75,7 @@ export default function Navbar({ profile }) {
                         ))}
                     </Link>
 
-                    <ul className="hidden lg:flex gap-6 text-sm font-medium text-[#e5e5e5]">
+                    <ul className="hidden lg:flex gap-8 text-xl font-medium text-[#e5e5e5]">
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <Link href={link.href} className="hover:text-[#b3b3b3] transition-colors cursor-pointer">

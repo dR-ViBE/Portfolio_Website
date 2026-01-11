@@ -38,9 +38,9 @@ export default function MusicPage() {
             <div className="pt-24 px-4 md:px-12 max-w-6xl mx-auto space-y-16">
 
                 {/* Header Back Button */}
-                <div className="flex items-center gap-4">
-                    <Link href="/?profile=Recruiter" className="p-2 bg-[#1a1a1a] rounded-full hover:bg-[#333] transition-colors">
-                        <ArrowLeft className="w-5 h-5 text-white" />
+                <div className="absolute top-4 left-4 md:top-8 md:left-8 z-50">
+                    <Link href="/?profile=Recruiter" className="p-2 bg-[#1a1a1a] rounded-full hover:bg-[#333] transition-colors block">
+                        <ArrowLeft className="w-6 h-6 text-white" />
                     </Link>
                 </div>
 
