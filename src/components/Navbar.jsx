@@ -22,11 +22,11 @@ export default function Navbar({ profile }) {
 
     const navLinks = [
         { name: 'Home', href: `/?profile=${profile || 'Recruiter'}` },
-        { name: 'Professional', href: '/experience' },
-        { name: 'Skills', href: '/skills' },
-        { name: 'Projects', href: '/projects' },
-        { name: 'Hire Me', href: '/contact' },
-        { name: 'Ask Me', href: '/ask-me' },
+        { name: 'Professional', href: `/experience?profile=${profile || 'Recruiter'}` },
+        { name: 'Skills', href: `/skills?profile=${profile || 'Recruiter'}` },
+        { name: 'Projects', href: `/projects?profile=${profile || 'Recruiter'}` },
+        { name: 'Hire Me', href: `/contact?profile=${profile || 'Recruiter'}` },
+        { name: 'Ask Me', href: `/ask-me?profile=${profile || 'Recruiter'}` },
     ];
 
     const allProfiles = [
@@ -57,17 +57,17 @@ export default function Navbar({ profile }) {
             className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-[#141414]' : 'bg-gradient-to-b from-black/70 to-transparent'
                 }`}
         >
-            <div className="px-4 md:px-12 py-6 flex items-center justify-between">
+            <div className="px-8 md:px-24 py-10 flex items-center justify-between">
                 <div className="flex items-center gap-12">
                     {/* Arched Logo linked to Profile Gate */}
-                    <Link href="/" className="flex items-end gap-[1px] cursor-pointer group">
+                    <Link href={`/?profile=${profile || 'Recruiter'}`} className="flex items-end gap-[1px] cursor-pointer group">
                         {logoLetters.map((letter, index) => (
                             <span
                                 key={index}
                                 className="text-[#e50914] text-3xl md:text-4xl font-bold uppercase tracking-tighter transition-transform duration-300 group-hover:scale-110"
                                 style={{
                                     transform: `translateY(${letter.offset})`,
-                                    textShadow: '2px 2px 4px rgba(0,0,0,0.5)'
+                                    textShadow: '3px 3px 6px rgba(0,0,0,0.5)'
                                 }}
                             >
                                 {letter.char}
@@ -75,7 +75,7 @@ export default function Navbar({ profile }) {
                         ))}
                     </Link>
 
-                    <ul className="hidden lg:flex gap-8 text-xl font-medium text-[#e5e5e5]">
+                    <ul className="hidden lg:flex gap-12 text-2xl font-medium text-[#e5e5e5]">
                         {navLinks.map((link) => (
                             <li key={link.name}>
                                 <Link href={link.href} className="hover:text-[#b3b3b3] transition-colors cursor-pointer">
@@ -91,7 +91,7 @@ export default function Navbar({ profile }) {
 
                     {/* Profile Dropdown */}
                     <div className="relative group flex items-center gap-2 cursor-pointer">
-                        <div className="w-8 h-8 rounded-md overflow-hidden border border-transparent group-hover:border-white transition-all duration-300">
+                        <div className="w-12 h-12 rounded-md overflow-hidden border border-transparent group-hover:border-white transition-all duration-300">
                             <img
                                 src={currentProfileImg}
                                 alt={currentProfileName}
@@ -99,7 +99,7 @@ export default function Navbar({ profile }) {
                             />
                         </div>
                         {/* Caret Icon */}
-                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-6 h-6 transition-transform duration-300 group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                         </svg>
 
