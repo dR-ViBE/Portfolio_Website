@@ -8,16 +8,16 @@ export default function Hero({ project, profile }) {
     let videoSource;
     switch (profile) {
         case 'Adventurer':
-            videoSource = '/adventurer.mp4';
+            videoSource = '/Profile_Home/adventurer.mp4';
             break;
         case 'Stalker':
-            videoSource = '/Stalker.mp4';
+            videoSource = '/Profile_Home/Stalker.mp4';
             break;
         case 'Developer':
-            videoSource = '/Developer.mp4';
+            videoSource = '/Profile_Home/Developer.mp4';
             break;
         default:
-            videoSource = '/main_page.mp4';
+            videoSource = '/Profile_Home/main_page.mp4';
     }
 
     return (

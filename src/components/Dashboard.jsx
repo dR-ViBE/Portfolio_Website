@@ -15,12 +15,12 @@ export default function Dashboard({ profile }) {
     // Static Data for "Top Picks" (8 Items for Grid)
     // Static Data for "Top Picks" (8 Items for Grid)
     const topPicks = [
-        { title: 'Work Authorization', imageUrl: '/permit GIF.gif', staticImage: '/permit_static.png', icon: Briefcase, link: '/work-auth' },
-        { title: 'Skills', imageUrl: '/Skills.gif', staticImage: '/skills_static.png', icon: Code, link: '/tech-stack' },
-        { title: 'Experience', imageUrl: '/work experience.gif', staticImage: '/experience_static.png', icon: Briefcase, link: '/experience' },
-        { title: 'Certifications', imageUrl: '/Certificates.gif', staticImage: '/certificates_static.png', icon: Award, link: '/certifications' },
-        { title: 'Projects', imageUrl: '/Projects.gif', staticImage: '/projects_static.png', icon: FolderGit2, link: '/projects' },
-        { title: 'Contact Me', imageUrl: '/Contact.gif', staticImage: '/contact_static.png', icon: Mail, link: '/contact' },
+        { title: 'Work Authorization', imageUrl: '/Top_Picks/permit GIF.gif', staticImage: '/Top_Picks/permit_static.png', icon: Briefcase, link: '/work-auth' },
+        { title: 'Skills', imageUrl: '/Top_Picks/Skills.gif', staticImage: '/Top_Picks/skills_static.png', icon: Code, link: '/skills' },
+        { title: 'Experience', imageUrl: '/Top_Picks/work experience.gif', staticImage: '/Top_Picks/experience_static.png', icon: Briefcase, link: '/experience' },
+        { title: 'Certifications', imageUrl: '/Top_Picks/Certificates.gif', staticImage: '/Top_Picks/certificates_static.png', icon: Award, link: '/certifications' },
+        { title: 'Projects', imageUrl: '/Top_Picks/Projects.gif', staticImage: '/Top_Picks/projects_static.png', icon: FolderGit2, link: '/projects' },
+        { title: 'Contact Me', imageUrl: '/Top_Picks/Contact.gif', staticImage: '/Top_Picks/contact_static.png', icon: Mail, link: '/contact' },
     ];
 
     // Static Data for "Continue Watching"
@@ -30,7 +30,7 @@ export default function Dashboard({ profile }) {
         { title: 'Reading', imageUrl: '/Continue_Watching/Reading.jpg', icon: Book, link: '/reading' },
         { title: 'Blogs', imageUrl: '/Continue_Watching/Blog.jpg', icon: FileText, link: '/blogs' },
         // Awards removed as requested
-        { title: 'Contact Me', imageUrl: '/contact.jfif', icon: Mail, link: '/contact' },
+        { title: 'Contact Me', imageUrl: '/Continue_Watching/contact.jfif', icon: Mail, link: '/contact' },
     ];
 
     return (
