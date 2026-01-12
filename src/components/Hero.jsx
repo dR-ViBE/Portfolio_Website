@@ -5,19 +5,20 @@ import Link from 'next/link';
 
 export default function Hero({ project, profile }) {
     // Determine video source based on profile
+    // CHANGED: All paths are now lowercase to avoid Vercel case-sensitivity errors
     let videoSource;
     switch (profile) {
         case 'Adventurer':
-            videoSource = '/Profile_Home/adventurer.mp4';
+            videoSource = '/profile/adventurer_profile.mp4';
             break;
         case 'Stalker':
-            videoSource = '/Profile_Home/Stalker.mp4';
+            videoSource = '/profile/stalker_profile.mp4';
             break;
         case 'Developer':
-            videoSource = '/Profile_Home/Developer.mp4';
+            videoSource = '/profile/developer_profile.mp4';
             break;
         default:
-            videoSource = '/Profile_Home/main_page.mp4';
+            videoSource = '/profile/recruiter_profile.mp4';
     }
 
     return (
